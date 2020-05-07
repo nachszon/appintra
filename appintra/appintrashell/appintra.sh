@@ -1,8 +1,7 @@
 #!/bin/bash
-
 #appintra.sh
 #program do przechowywania danych
-#autor: Krzysztof Lipa-Izdebski
+#autor: Nachszon
 #kwiecien 2016
 Version=5.1
 
