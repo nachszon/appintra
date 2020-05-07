@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #appintra.sh
-#interface to postgresql db
-#autor: Nachszon
+#program do przechowywania danych
+#autor: Krzysztof Lipa-Izdebski
 #kwiecien 2016
 Version=5.1
 
@@ -40,7 +40,7 @@ echo -e
 }
 
 #funkcja func_env
-#Zadaniem funkcji jest prezentacja opcji wybranego œrodowiska (PROD/DEV/TST)
+#Zadaniem funkcji jest prezentacja opcji wybranego œrodowiska (PRD/INS/UAT)
 #Wybór œrodowiska nastêpuje w funkcji func_main()
 #Funkcja wywo³uje funkcjê func_system, do której dodaje drugi parametr 
 #nazwê systemu/subsystemu: shell/windows/db/smsc/another
@@ -116,10 +116,10 @@ func_info_program
 
 echo -e "Wybierz srodowisko:\n"
 
-echo "1) PROD
-2) DEV
-3) TST
-4) INST
+echo "1) PRD
+2) UAT
+3) INS
+4) PREPROD
 c) Zmien haslo do bazy $applicationName
 z) Zamknij aplikacje $applicationName
 "
@@ -130,11 +130,11 @@ read env_from_requester
 
 case $env_from_requester in
 
-1) func_env prod 
+1) func_env prd 
 ;;
-2) func_env dev
+2) func_env uat
 ;;
-3) func_env inst
+3) func_env ins
 ;;
 4) func_env preprod
 ;;
